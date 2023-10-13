@@ -70,7 +70,7 @@ export default async function Page({params }: Props) {
           {/* Product gallery */}
           {/* <ProductGallery />*/}
           {/* Product info */}
-          <ProductInfo product={product}/>
+          <ProductInfo products={product}/>
         </div>
       </div>
     </main>

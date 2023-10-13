@@ -44,8 +44,10 @@ export function SiteHeader() {
         </form>
         <div className="flex items-center space-x-1">
 
-          {/*
+
+          {/**
           <Link href="/cart">
+
             <Button size="sm" variant="ghost">
               {/*<Stethoscope color="#14d0ff" />
               <ShoppingBag className="h-5 w-5" />
@@ -53,7 +55,8 @@ export function SiteHeader() {
               <span className="sr-only">Cart</span>
             </Button>
           </Link>
-          */}
+        */}
+          
           <ThemeToggle />
           {process.env.NODE_ENV === "development" && (
             <Link href="/studio">
@@ -65,5 +68,6 @@ export function SiteHeader() {
         </div>
       </div>
     </header>
+    
   )
 }
