@@ -26,15 +26,12 @@ clients
 
 */}
 
-interface Props {
-
-  product: SanityProduct
-}
 
 interface Props {
   params:{
     slug: string
-  }
+  },
+  product: SanityProduct
 }
 
 export default async function Page({params }: Props) {
