@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-import { ArrowRight } from "lucide-react"
+
 import { formatCurrencyString, useShoppingCart } from "use-shopping-cart"
 import Image from "next/image"
 import Link from "next/link"
@@ -13,7 +13,7 @@ import { useToast } from "@/components/ui/use-toast"
 
 
 import { urlForImage } from "@/sanity/lib/image"
-import { XCircle } from "lucide-react"
+
 
 
 import { SanityProduct } from "@/config/inventory"
