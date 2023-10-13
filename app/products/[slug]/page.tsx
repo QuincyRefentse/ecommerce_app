@@ -1,3 +1,59 @@
+import { client } from "@/sanity/lib/client";
+import { groq } from "next-sanity";
+
+import { SanityProduct } from "@/config/inventory";
+
+interface Props {
+  params: {
+    slug: string;
+  };
+}
+
+export default async function Page({ params }: Props) {
+  const { slug } = params;
+
+  // Fetch the product data
+  const product: SanityProduct | undefined = await client.fetch(
+    groq`*[_type == "product" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      "id": _id,
+      name,
+      sku,
+      images,
+      price,
+      currency,
+      description,
+      sizes,
+      categories,
+      colors,
+      "slug": slug.current
+    }`,
+    { slug }
+  );
+
+  console.log(product);
+
+  return (
+    <main className="mx-auto max-w-5xl sm:px-6 sm:pt-16 lg:px-8">
+      <div className="mx-auto max-w-2xl lg:max-w-none">
+        {/* Product */}
+        <div className="pb-20 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-12">
+          {/* Product gallery */}
+          {/* <ProductGallery /> */}
+          {/* Product info */}
+          {/* <ProductInfo product={product} /> */}
+        </div>
+      </div>
+    </main>
+  );
+}
+
+
+
+
+{/*
+
 import { client } from "@/sanity/lib/client"
 import { groq } from "next-sanity"
 
@@ -24,7 +80,7 @@ clients
   console.error('Error fetching data: ', error);
 });
 
-*/}
+
 
 
 interface Props {
@@ -62,14 +118,17 @@ export default async function Page({params }: Props) {
   return (
     <main className="mx-auto max-w-5xl sm:px-6 sm:pt-16 lg:px-8">
       <div className="mx-auto max-w-2xl lg:max-w-none">
-        {/* Product */}
+        {/* Product 
         <div className="pb-20 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-12">
-          {/* Product gallery */}
-          {/* <ProductGallery />*/}
-          {/* Product info */}
-          {/* <ProductInfo products={product}/>*/}
+          {/* Product gallery 
+          {/* <ProductGallery />
+          {/* Product info 
+          {/* <ProductInfo products={product}/>
         </div>
       </div>
     </main>
   )
 }
+
+
+*/}
