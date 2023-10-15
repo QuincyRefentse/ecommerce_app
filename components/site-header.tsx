@@ -20,10 +20,11 @@ export function SiteHeader() {
 
   function onSubmit(event: React.SyntheticEvent) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
     const searchQuery = formData.get("search");
     router.replace(`/?search=${searchQuery}`);
   }
+  
   
 
   return (
