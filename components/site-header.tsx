@@ -18,12 +18,13 @@ export function SiteHeader() {
 
   if (pathname.startsWith('/studio')) return null;
 
-  function onSubmit(event) {
+  function onSubmit(event: React.SyntheticEvent) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const searchQuery = formData.get("search");
     router.replace(`/?search=${searchQuery}`);
   }
+  
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background p-4 md:p-6">
