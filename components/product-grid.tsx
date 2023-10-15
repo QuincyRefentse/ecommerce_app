@@ -43,8 +43,8 @@ export function ProductGrid({ products }: Props) {
               className="h-full w-full object-cover object-center"
             />
           </div>
-          <h3 className="mt-4 font-medium">{product.name}</h3>
-          <p className="mt-2 font-medium">{/*{formatCurrencyString({currency: product.currency, value: product.price})} */}</p>
+          <h3 className="mt-4 font-medium "><b>{product.name}</b></h3>
+          <p className="mt-2 font-medium ">{product.description}{/*{formatCurrencyString({currency: product.currency, value: product.price})} */}</p>
         </Link>
       ))}
     </div>

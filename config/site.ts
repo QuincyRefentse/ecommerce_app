@@ -6,9 +6,9 @@ export const siteConfig = {
   footer: [
    
     
-    { name: "Home", href: "/" },
+    { name: "Home", href: "" },
     { name: "About", href: "#" },
-    { name: "Contact us", href: "#" ,className: 'footer-text-white'},
+    { name: "Contact us", href: "https://wa.link/qszjzf" ,className: 'footer-text-white'},
     { name: " ", href: "#" ,className: 'footer-text-white'},
     { name: "  ", href: "#" ,className: 'footer-text-white'},
     { name: "Site Developed by Bopa Development", href: "https://wa.me/message/6KW3T77WCF5XM1" },
